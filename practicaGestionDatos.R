@@ -10,8 +10,9 @@ if (file.exists(nuevo_dir)){
   cat("fallo al crear directorio: ", nuevo_dir, "\n")
 }
 
-set.seed(25)
-registros = 10
+set.seed(25) #Creamos semilla para los números aleatorios
+registros = 10 
+
 #Ejercicio 1
 edades_descubrimientos = sample(1:150, registros, replace = TRUE)
 print(edades_descubrimientos)
@@ -40,30 +41,74 @@ años_excavaciones = sample(1:150, registros, replace = TRUE)
 print(años_excavaciones)
 sum(años_excavaciones)
 
-#Ejercicio6
+#Ejercicio6 HECHO EN CASA
 
 matriz
 
-matriz = matrix (c(1,2,3), 
+matriz = matrix (c(1:9), 
                  nrow= 3, 
                  ncol= 3, 
                  byrow= F, 
                  dimnames = list(c(1915,1980,1965), c("Itálica","valencina","osuna")))
 print(matriz)
+sumafilas = apply(matriz, 1, sum)
+print(sumafilas) #Suma de cada fila
+matriz["1965", ] # El año de más excaciones
 
-#Ejercicio7
+#Ejercicio7 HECHO EN CASA
 
 
-matriz = matrix (c(1,2,3), 
+matriz = matrix (c(1:9), 
                  nrow= 3, 
                  ncol= 3, 
                  byrow= F, 
                  dimnames = list(c(1,2,3), c("sitio1","sitio2","sitio3")))
-                  
 
 print(matriz)
+columna_numero = "sitio1" #Asignamos un valor para calcular la media de la columna deseada
+media_columna <- mean(matriz[, columna_numero]) #Así se consigue la media de la columna
+print(media_columna) #
+matriz[ ,"sitio1"]
 
-#Ejercicio8
+#Ejercicio8 HECHO EN CASA
+
+matriz = matrix (c(1:9), 
+                 nrow= 3, 
+                 ncol= 3, 
+                 byrow= F, 
+                 dimnames = list(c("E.Hierro","Romano","Medieval"), c("Metales","óseos","cerámica")))
+
+print(matriz)
+sumafilas = apply(matriz, 1, sum)
+print(sumafilas) #Suma de cada fila
+matriz["Medieval", ] # El periodo con más artefactos
+
+#Ejercicio 9 HECHO EN CASA
+
+matriz = matrix (c(1:9), 
+                 nrow= 3, 
+                 ncol= 3, 
+                 byrow= F, 
+                 dimnames = list(c("sitio1","sitio2","sitio3"), c(1,2,3)))
+
+print(matriz)
+sumafilas = apply(matriz, 1, sum)
+print(sumafilas) #Suma de cada fila
+matriz["sitio1", ] #Sitio con menos pofundidades
+
+#Ejercicio 10 HECHO EN CASA
+
+matriz = matrix (c(1:9), 
+                 nrow= 3, 
+                 ncol= 3, 
+                 byrow= F, 
+                 dimnames = list(c("E.Hierro","Romano","Medieval"), c("Metales","óseos","cerámica")))
+
+print(matriz)
+sumacolumnas = apply(matriz, 2, sum)
+print(sumacolumnas) 
+matriz[ ,"cerámica"]
+
 
 #Ejercicio 11
 
@@ -99,7 +144,7 @@ print(excavaciones_equipo)
 yacimiento = sample(c("Yac1","Yac2", "Yac3"), registros, replace = TRUE)
 edad = sample(1:40, registros, replace = TRUE)
 sexo = sample(c("hombre", "mujer"), registros,replace= TRUE)
-descripcion =  sample(c("reciñen nacido","craneo", "Fémur"), registros, replace = TRUE)
+descripcion =  sample(c("recién nacido","cráneo", "Fémur"), registros, replace = TRUE)
 
 datos_esqueletos = data.frame(
   yacimiento = yacimiento,
@@ -109,3 +154,17 @@ datos_esqueletos = data.frame(
 )
 print(datos_esqueletos)
 
+#Ejercicio 14 HECHO EN CASA
+
+yacimiento = sample(c("Yac1","Yac2", "Yac3"), registros, replace = TRUE)
+altitud  = sample(1:3000, registros, replace = TRUE)
+longitud = sample(0:180, registros, replace = TRUE)
+latitud = sample(0:90, registros, replace = TRUE)
+
+ubicaciones_geograficas = data.frame(
+  yacimiento = yacimiento,
+  altitud = altitud,
+  longitud = longitud,
+  latitud = latitud
+)
+print(ubicaciones_geograficas)
