@@ -16,7 +16,7 @@ registros = 10
 #Ejercicio 1
 edades_descubrimientos = sample(1:150, registros, replace = TRUE)
 print(edades_descubrimientos)
-median(edades_descubrimientos, na.rm = TRUE)
+mean(edades_descubrimientos)
 
 #Ejercicio2
 
@@ -39,7 +39,7 @@ length(materiales_encontrados)
 #Ejercicio5
 años_excavaciones = sample(1:150, registros, replace = TRUE)
 print(años_excavaciones)
-sum(años_excavaciones)
+length(años_excavaciones)
 
 #Ejercicio6 HECHO EN CASA
 
@@ -67,7 +67,7 @@ matriz = matrix (c(1:9),
 print(matriz)
 columna_numero = "sitio1" #Asignamos un valor para calcular la media de la columna deseada
 media_columna <- mean(matriz[, columna_numero]) #Así se consigue la media de la columna
-print(media_columna) #
+print(media_columna)
 matriz[ ,"sitio1"]
 
 #Ejercicio8 HECHO EN CASA
@@ -144,7 +144,7 @@ print(excavaciones_equipo)
 yacimiento = sample(c("Yac1","Yac2", "Yac3"), registros, replace = TRUE)
 edad = sample(1:40, registros, replace = TRUE)
 sexo = sample(c("hombre", "mujer"), registros,replace= TRUE)
-descripcion =  sample(c("recién nacido","cráneo", "Fémur"), registros, replace = TRUE)
+descripcion =  sample(c("húmero","cráneo", "Fémur"), registros, replace = TRUE)
 
 datos_esqueletos = data.frame(
   yacimiento = yacimiento,
